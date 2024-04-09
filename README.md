@@ -16,14 +16,11 @@ bunx create-next-app@latest --use-bun -e https://github.com/dishmael/next-templa
 ### SRC Folder Structure
 ```
 src
-├── api
 ├── app
 │   ├── layout.tsx
 │   └── page.tsx
 ├── components
-│   ├── defaultLayout.tsx
-│   └── ui
-├── libs
+│   └── defaultLayout.tsx
 └── styles
     └── globals.css
 ```
