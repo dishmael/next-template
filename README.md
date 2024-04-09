@@ -11,6 +11,7 @@ bunx create-next-app@latest --use-bun -e https://github.com/dishmael/next-templa
 - [prisma](https://www.prisma.io): object–relational mapper (ORM)
 - [react-hook-form](https://react-hook-form.com): performant, flexible and extensible forms
 - [@tanstack/react-table](https://tanstack.com/table/latest): headless table UI
+- [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): plugin for creating animations
 - [zod](https://zod.dev): schema declaration and validation
 
 ### SRC Folder Structure
