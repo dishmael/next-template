@@ -12,3 +12,18 @@ bunx create-next-app@latest --use-bun -e https://github.com/dishmael/next-templa
 - [react-hook-form](https://react-hook-form.com): performant, flexible and extensible forms
 - [@tanstack/react-table](https://tanstack.com/table/latest): headless table UI
 - [zod](https://zod.dev): schema declaration and validation
+
+## SRC Folder Structure
+```
+src
+├── api
+├── app
+│   ├── layout.tsx
+│   └── page.tsx
+├── components
+│   ├── defaultLayout.tsx
+│   └── ui
+├── libs
+└── styles
+    └── globals.css
+```
