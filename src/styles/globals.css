@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.home {
+  @apply flex 
+    w-screen 
+    h-screen 
+    items-center 
+    align-middle 
+    justify-center 
+    text-6xl 
+    text-blue-800
+    font-semibold;
+    text-shadow: blue 1px 0 60px;
+}
