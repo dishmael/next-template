@@ -28,12 +28,16 @@ export default function RootLayout({
       <body
         className={`min-h-screen bg-background font-sans antialiased ${fontSans.variable}`}
       >
-        <div className="sticky top-0 bg-slate-50">Header</div>
-        <div className="flex relative">
-          <aside className="hidden lg:block h-screen w-64 overflow-y-auto bg-gray-300 sticky top-16 p-4">
-            Sidebar
-          </aside>
-          <main className="p-4">Main</main>
+        <div className="flex flex-col h-screen overflow-hidden">
+          <div className="sticky top-0 z-50 bg-white shadow-md p-4">Header</div>
+          <div className="flex flex-row flex-grow overflow-hidden">
+            <div className="sticky top-0 h-full w-48 overflow-y-auto bg-gray-100 p-4">
+              Sidebar
+            </div>
+            <div className="flex-grow overflow-x-auto overflow-y-auto p-4">
+              {children}
+            </div>
+          </div>
         </div>
       </body>
     </html>
