@@ -8,6 +8,7 @@ bunx create-next-app@latest --use-bun -e https://github.com/dishmael/next-templa
 
 ### Packages
 - [@faker-js/faker](https://fakerjs.dev): fake data generator for development
+- [@preact/signals](https://preactjs.com/guide/v10/signals): reactive primitives for managing application state
 - [prisma](https://www.prisma.io): object–relational mapper (ORM)
 - [react-hook-form](https://react-hook-form.com): performant, flexible and extensible forms
 - [@tanstack/react-table](https://tanstack.com/table/latest): headless table UI
