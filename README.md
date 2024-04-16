@@ -19,10 +19,10 @@ bunx create-next-app@latest --use-bun -e https://github.com/dishmael/next-templa
 ```
 src
 ├── app
-│   ├── adminLayout.tsx
 │   ├── layout.tsx
 │   └── page.tsx
 ├── components
+│   ├── adminLayout.tsx
 │   └── defaultLayout.tsx
 └── styles
     └── globals.css
