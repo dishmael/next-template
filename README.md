@@ -22,6 +22,7 @@ src
 │   ├── layout.tsx
 │   └── page.tsx
 ├── components
+├── layouts
 │   ├── adminLayout.tsx
 │   └── defaultLayout.tsx
 └── styles
