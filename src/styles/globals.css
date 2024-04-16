@@ -2,15 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+.center {
+  @apply top-1/2
+    left-1/2
+    transform -translate-x-1/2 -translate-y-1/2;
+}
+
 .home {
   @apply flex 
-    w-screen 
-    h-screen 
+    center
+    relative
     items-center 
     align-middle 
     justify-center 
+    text-center
     text-6xl 
     text-blue-800
     font-semibold;
-    text-shadow: blue 1px 0 60px;
+  text-shadow: blue 1px 0 60px;
 }
