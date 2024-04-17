@@ -1,5 +1,5 @@
 # next-template
-This is a site template built using [Bun](https://bun.sh) to quickly create sites with the common packages I tend to install frequently. I have also included a few components that I find myself creating repeatedly. I just delete them if I'm not using them in my current project.
+This is a site template built using [Bun](https://bun.sh) to quickly create sites with the common packages I tend to install frequently. I have also included a few components and various code snippets that I find myself creating often. Since I am including quite a lot of code, this template is going to be bloated. For me, that's not a big deal, I just delete what I dont need/want when I build my app. It's way easier to delete than to recreate each time. Maybe I will move to bit.dev for a more composable approach, but this works for me for now.
 
 ### Install
 ```
@@ -37,6 +37,12 @@ src
 │       └── buttons
 │           ├── hamburger.tsx
 │           └── index.ts
-└── styles
-    └── globals.css
+├── libs
+├── styles
+│   └── globals.css
+└── utils
+    ├── calculateWorkDays.ts
+    ├── exportData.ts
+    ├── getTimestamp.ts
+    └── index.ts
 ```
