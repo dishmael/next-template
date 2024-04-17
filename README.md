@@ -1,5 +1,5 @@
 # next-template
-This is a site template built using [Bun](https://bun.sh) to quickly create sites with the common packages I tend to install frequently.
+This is a site template built using [Bun](https://bun.sh) to quickly create sites with the common packages I tend to install frequently. I have also included a few components that I find myself creating repeatedly. I just delete them if I'm not using them in my current project.
 
 ### Install
 ```
@@ -22,9 +22,21 @@ src
 │   ├── layout.tsx
 │   └── page.tsx
 ├── components
-├── layouts
-│   ├── adminLayout.tsx
-│   └── defaultLayout.tsx
+│   ├── contexts
+│   │   └── appContext.tsx
+│   ├── layouts
+│   │   ├── adminLayout.tsx
+│   │   ├── defaultLayout.tsx
+│   │   └── index.ts
+│   ├── nav
+│   │   ├── footer.tsx
+│   │   ├── header.tsx
+│   │   ├── index.ts
+│   │   └── sidebar.tsx
+│   └── ui
+│       └── buttons
+│           ├── hamburger.tsx
+│           └── index.ts
 └── styles
     └── globals.css
 ```
