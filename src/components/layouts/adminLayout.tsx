@@ -1,14 +1,13 @@
 import React from "react";
-import { Sidebar } from "@/components/nav/sidebar";
-import { Header } from "@/components/nav/header";
-import { AppContextProvider } from "../contexts/appContext";
+import { Header, Sidebar } from "@/components/nav"
+import { AppContextProvider } from "@/components/contexts/appContext";
 
 /**
  * AdminLayout provides a layout consisting of a Header, Sidebar, and Main area
  * @param param0 
  * @returns 
  */
-export const AdminLayout = ({ children }: { children: React.ReactNode }) => {
+const AdminLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <AppContextProvider>
       <div className="flex flex-col h-screen overflow-hidden">
@@ -51,3 +50,5 @@ const MainContentContainer = ({ children }: { children: React.ReactNode }) => {
     </div>
   );
 };
+
+export default AdminLayout;

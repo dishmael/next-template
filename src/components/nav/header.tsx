@@ -3,6 +3,8 @@
  * 
  * @returns JSX Element
  */
-export const Header = () => {
+const Header = () => {
     return <div className="sticky top-0 z-50 h-16 border-b shadow-md p-4">Header</div>;
 }
+
+export default Header;

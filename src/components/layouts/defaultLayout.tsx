@@ -5,6 +5,8 @@
  * @param param0 
  * @returns 
  */
-export const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
+const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
   return <div>{children}</div>;
 };
+
+export default DefaultLayout;

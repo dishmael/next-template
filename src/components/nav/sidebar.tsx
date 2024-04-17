@@ -4,10 +4,12 @@
  * 
  * @returns JSX Element
  */
-export const Sidebar = () => {
+const Sidebar = () => {
     return (
         <div className="sticky top-0 h-full w-48 overflow-y-auto border-r shadow-md p-4">
             Sidebar
         </div>
     );
 }
+
+export default Sidebar;
