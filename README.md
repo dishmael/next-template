@@ -8,7 +8,7 @@ bunx create-next-app@latest --use-bun -e https://github.com/dishmael/next-templa
 
 ### Packages
 - [@faker-js/faker](https://fakerjs.dev): fake data generator for development
-- [@preact/signals](https://preactjs.com/guide/v10/signals): reactive primitives for managing application state
+- [@mui/material](https://mui.com/material-ui/all-components/): a comprehensive suite of free UI tools
 - [prisma](https://www.prisma.io): object–relational mapper (ORM)
 - [react-hook-form](https://react-hook-form.com): performant, flexible and extensible forms
 - [@tanstack/react-table](https://tanstack.com/table/latest): headless table UI
@@ -18,9 +18,12 @@ bunx create-next-app@latest --use-bun -e https://github.com/dishmael/next-templa
 ### SRC Folder Structure
 ```
 src
+├── api
 ├── app
 │   ├── layout.tsx
-│   └── page.tsx
+│   ├── page.tsx
+│   └── settings
+│       └── page.tsx
 ├── components
 │   ├── contexts
 │   │   └── appContext.tsx
@@ -28,15 +31,19 @@ src
 │   │   ├── adminLayout.tsx
 │   │   ├── defaultLayout.tsx
 │   │   └── index.ts
-│   ├── nav
-│   │   ├── footer.tsx
-│   │   ├── header.tsx
-│   │   ├── index.ts
-│   │   └── sidebar.tsx
 │   └── ui
-│       └── buttons
-│           ├── hamburger.tsx
-│           └── index.ts
+│       ├── accountMenu.tsx
+│       ├── buttons
+│       │   ├── hamburger.tsx
+│       │   └── index.ts
+│       ├── icons
+│       │   └── index.ts
+│       ├── nav
+│       │   ├── footer.tsx
+│       │   ├── header.tsx
+│       │   ├── index.ts
+│       │   └── sidebar.tsx
+│       └── repeater.tsx
 ├── libs
 ├── styles
 │   └── globals.css
@@ -46,3 +53,8 @@ src
     ├── getTimestamp.ts
     └── index.ts
 ```
+
+### Commentary
+I'm using this section of the README to capture changes in mindset on frameworks and packages.
+#### @Preact/Signals
+I tried implementing [@preact/signals](https://preactjs.com/guide/v10/signals) as a replacement for useState for managing application state; howeveer, I could not get the signal to work correctly when trying to apply the state at a global level with the materials-UI components. After many hours of trying to debug the issue, I gave up and went back to using useState.
