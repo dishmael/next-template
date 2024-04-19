@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@preact/signals": "^1.2.3",
     "@tanstack/react-table": "^8.15.3",
     "next": "14.1.4",
     "react": "^18",
