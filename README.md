@@ -7,6 +7,7 @@ bunx create-next-app@latest --use-bun -e https://github.com/dishmael/next-templa
 ```
 
 ### Packages
+- [apexcharts](https://apexcharts.com): a modern and interactive open-source chart library
 - [@faker-js/faker](https://fakerjs.dev): fake data generator for development
 - [@mui/material](https://mui.com/material-ui/all-components/): a comprehensive suite of free UI tools
 - [prisma](https://www.prisma.io): object–relational mapper (ORM)
