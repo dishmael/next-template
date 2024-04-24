@@ -16,6 +16,7 @@ bunx create-next-app@latest --use-bun -e https://github.com/dishmael/next-templa
 - [apexcharts](https://apexcharts.com)
 - [class-variance-authority](https://cva.style/docs/getting-started/installation)
 - [clsx](https://www.npmjs.com/package/clsx)
+- [date-fn](https://date-fns.org)
 - [framer-motion](https://www.framer.com/motion/introduction/)
 - [lucide-react](https://lucide.dev)
 - [next-thems](https://github.com/pacocoursey/next-themes)
