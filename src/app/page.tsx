@@ -1,3 +1,5 @@
+import { Repeater } from "@/components/ui/repeater";
+
 export default function Home() {
-  return <div className="home">Hello, Welcome!</div>;
+  return <div className="text-xl">Hello, Welcome!</div>;
 }

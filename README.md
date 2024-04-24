@@ -6,53 +6,39 @@ This is a site template built using [Bun](https://bun.sh) to quickly create site
 bunx create-next-app@latest --use-bun -e https://github.com/dishmael/next-template
 ```
 
-### Packages
-- [apexcharts](https://apexcharts.com): a modern and interactive open-source chart library
-- [@faker-js/faker](https://fakerjs.dev): fake data generator for development
-- [@mui/material](https://mui.com/material-ui/all-components/): a comprehensive suite of free UI tools
-- [prisma](https://www.prisma.io): object–relational mapper (ORM)
-- [react-hook-form](https://react-hook-form.com): performant, flexible and extensible forms
-- [@tanstack/react-table](https://tanstack.com/table/latest): headless table UI
-- [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): plugin for creating animations
-- [zod](https://zod.dev): schema declaration and validation
+### Enhancement Packages
+- [@faker-js/faker](https://fakerjs.dev)
+- [@radix-ui/react-dialog](https://www.radix-ui.com/primitives/docs/components/dialog)
+- [@radix-ui/react-dropdown-menu](https://www.radix-ui.com/primitives/docs/components/dropdown-menu)
+- [@radix-ui/react-separator](https://www.radix-ui.com/primitives/docs/components/separator)
+- [@radix-ui/react-slot](https://www.radix-ui.com/primitives/docs/utilities/slot)
+- [@tanstack/react-table](https://tanstack.com/table/latest)
+- [apexcharts](https://apexcharts.com)
+- [class-variance-authority](https://cva.style/docs/getting-started/installation)
+- [clsx](https://www.npmjs.com/package/clsx)
+- [framer-motion](https://www.framer.com/motion/introduction/)
+- [lucide-react](https://lucide.dev)
+- [next-thems](https://github.com/pacocoursey/next-themes)
+- [prisma](https://www.prisma.io)
+- [react-hook-form](https://react-hook-form.com)
+- [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate)
+- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge)
+- [zod](https://zod.dev)
 
 ### SRC Folder Structure
 ```
 src
 ├── api
 ├── app
-│   ├── layout.tsx
-│   ├── page.tsx
 │   └── settings
-│       └── page.tsx
 ├── components
 │   ├── contexts
-│   │   └── appContext.tsx
 │   ├── layouts
-│   │   ├── adminLayout.tsx
-│   │   ├── defaultLayout.tsx
-│   │   └── index.ts
+│   ├── nav
 │   └── ui
-│       ├── accountMenu.tsx
-│       ├── buttons
-│       │   ├── hamburger.tsx
-│       │   └── index.ts
-│       ├── icons
-│       │   └── index.ts
-│       ├── nav
-│       │   ├── footer.tsx
-│       │   ├── header.tsx
-│       │   ├── index.ts
-│       │   └── sidebar.tsx
-│       └── repeater.tsx
-├── libs
+├── lib
 ├── styles
-│   └── globals.css
 └── utils
-    ├── calculateWorkDays.ts
-    ├── exportData.ts
-    ├── getTimestamp.ts
-    └── index.ts
 ```
 
 ### Commentary

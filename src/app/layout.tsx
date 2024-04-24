@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
-import { AdminLayout } from "@/components/layouts";
+import { DefaultLayout } from "@/components/layouts/defaultLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,8 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`min-h-screen bg-background font-sans antialiased ${fontSans.variable}`}>
-        <AdminLayout>{children}</AdminLayout>
+      <body
+        className={`min-h-screen bg-background font-sans antialiased ${fontSans.variable}`}
+      >
+        <DefaultLayout>{children}</DefaultLayout>
       </body>
     </html>
   );

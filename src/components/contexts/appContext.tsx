@@ -13,11 +13,8 @@ type BoolDispatch = Dispatch<SetStateAction<boolean>>;
 
 // This type defines the shape for our Sidebar Context
 type TSidebarContext = {
-  drawerWidth: number;
-  isClosing: boolean;
-  isMobileOpen: boolean;
-  setIsClosing: BoolDispatch;
-  setMobileOpen: BoolDispatch;
+  isSidebarOpen: boolean;
+  setSidebarOpen: BoolDispatch;
 };
 
 // This type combines all the shapes
@@ -27,27 +24,17 @@ type TAppContext = {} & TSidebarContext;
 const AppContext = createContext<TAppContext | undefined>(undefined);
 
 /**
- * This is a custom hook to use the Sidebar Context
+ * This is a custom hook to fetch our context
  *
  * @returns
  */
-export const useSidebarContext = (): TSidebarContext => {
+export const useAppContext = (): TAppContext => {
   const ctx = useContext(AppContext);
   if (ctx === undefined) {
-    throw new Error(`useSidebarContext must be used inside AppContextProvider`);
+    throw new Error(`useAppContext must be used inside AppContextProvider`);
   }
 
-  // Destructure the context and return the values
-  const { drawerWidth, isClosing, isMobileOpen, setIsClosing, setMobileOpen } =
-    ctx;
-
-  return {
-    drawerWidth,
-    isClosing,
-    isMobileOpen,
-    setIsClosing,
-    setMobileOpen,
-  };
+  return ctx;
 };
 
 /**
@@ -58,18 +45,13 @@ export const useSidebarContext = (): TSidebarContext => {
  * @returns
  */
 export const AppContextProvider = ({ children }: { children: ReactNode }) => {
-  const [isClosing, setIsClosing] = useState<boolean>(false);
-  const [isMobileOpen, setMobileOpen] = useState<boolean>(false);
-  const drawerWidth = 240;
+  const [isSidebarOpen, setSidebarOpen] = useState<boolean>(false);
 
   return (
     <AppContext.Provider
       value={{
-        drawerWidth,
-        isClosing,
-        isMobileOpen,
-        setIsClosing,
-        setMobileOpen,
+        isSidebarOpen,
+        setSidebarOpen,
       }}
     >
       {children}
