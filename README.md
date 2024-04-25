@@ -34,13 +34,16 @@ I've added authorization/authentication via auth0 to the template, but the middl
 ```
 src
 ├── api
+│   └── auth
+│       └── [auth0]
 ├── app
-│   └── settings
+│   ├── profile
+│   └── settings
 ├── components
-│   ├── contexts
-│   ├── layouts
-│   ├── nav
-│   └── ui
+│   ├── contexts
+│   ├── layouts
+│   ├── nav
+│   └── ui
 ├── lib
 ├── styles
 └── utils
