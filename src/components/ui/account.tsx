@@ -1,3 +1,5 @@
+"use client"
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,14 +13,18 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { CircleUserRound, LogOut, Settings } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 export function Account() {
+  const [isOpen, setOpen] = useState(false)
+
   return (
-    <DropdownMenu>
+    <DropdownMenu open={isOpen}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
           className="relative size-10 rounded-full focus-visible:ring-0"
+          onClick={() => setOpen(true)}
         >
           <Avatar className="size-10">
             <AvatarImage src="/avatars/01.png" alt="@shadcn" />
@@ -39,8 +45,9 @@ export function Account() {
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <Link
-              href="/settings"
+              href="/profile"
               className="mx-[-0.65rem] flex items-center gap-2 rounded-xl px-3 hover:text-foreground"
+              onClick={() => setOpen(false)}
             >
               <CircleUserRound size={16} />
               <span>Profile</span>
@@ -50,6 +57,7 @@ export function Account() {
             <Link
               href="/settings"
               className="mx-[-0.65rem] flex items-center gap-2 rounded-xl px-3 hover:text-foreground"
+              onClick={() => setOpen(false)}
             >
               <Settings size={16} />
               <span>Settings</span>
@@ -59,8 +67,9 @@ export function Account() {
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           <Link
-            href="/settings"
+            href="/api/auth/logout"
             className="mx-[-0.65rem] flex items-center gap-2 rounded-xl px-3 hover:text-foreground"
+            onClick={() => setOpen(false)}
           >
             <LogOut size={16} />
             <span>Log Out</span>
