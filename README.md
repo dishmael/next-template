@@ -7,7 +7,7 @@ bunx create-next-app@latest --use-bun -e https://github.com/dishmael/next-templa
 ```
 
 ### Authentication/Authorization
-I've added authorization/authentication via auth0 to the template, but the middleware file is named middleware.ts.disabled. You'll need to setup auth0 () and then change the filename back to middleware.ts. Don't forget to update the variables in .env once you have auth0 configured.
+I've added authorization/authentication via auth0 to the template, but the middleware file is named middleware.ts.disabled. You'll need to setup [auth0](https://github.com/auth0/nextjs-auth0) and then change the filename back to middleware.ts. Don't forget to update the variables in .env once you have auth0 configured.
 
 ### Enhancement Packages
 - [@auth0/nextjs-auth0](https://github.com/auth0/nextjs-auth0)
