@@ -1,0 +1,15 @@
+/**
+ * This middleware protects the entire app; read more here:
+ * 
+ * https://auth0.github.io/nextjs-auth0/types/helpers_with_middleware_auth_required.WithMiddlewareAuthRequired.html
+ */
+
+// middleware.js
+import { withMiddlewareAuthRequired } from '@auth0/nextjs-auth0/edge';
+
+export default withMiddlewareAuthRequired();
+
+// https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
+export const config = {
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+};

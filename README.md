@@ -6,7 +6,11 @@ This is a site template built using [Bun](https://bun.sh) to quickly create site
 bunx create-next-app@latest --use-bun -e https://github.com/dishmael/next-template
 ```
 
+### Authentication/Authorization
+I've added authorization/authentication via auth0 to the template, but the middleware file is named middleware.ts.disabled. You'll need to setup auth0 () and then change the filename back to middleware.ts. Don't forget to update the variables in .env once you have auth0 configured.
+
 ### Enhancement Packages
+- [@auth0/nextjs-auth0](https://github.com/auth0/nextjs-auth0)
 - [@faker-js/faker](https://fakerjs.dev)
 - [@radix-ui/react-dialog](https://www.radix-ui.com/primitives/docs/components/dialog)
 - [@radix-ui/react-dropdown-menu](https://www.radix-ui.com/primitives/docs/components/dropdown-menu)
