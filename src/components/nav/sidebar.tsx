@@ -28,7 +28,6 @@ const Sidebar = () => {
 
   const sbLinks: SidebarLink[] = [
     { title: "Home", href: "/", icon: Home },
-    { title: "Settings", href: "/settings", icon: Settings },
   ];
 
   return (
