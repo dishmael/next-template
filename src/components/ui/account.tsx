@@ -19,7 +19,7 @@ export function Account() {
   const [isOpen, setOpen] = useState(false)
 
   return (
-    <DropdownMenu open={isOpen}>
+    <DropdownMenu open={isOpen} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
