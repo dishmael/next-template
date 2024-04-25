@@ -25,6 +25,7 @@ I've added authorization/authentication via auth0 to the template, but the middl
 - [lucide-react](https://lucide.dev)
 - [next-thems](https://github.com/pacocoursey/next-themes)
 - [prisma](https://www.prisma.io)
+- [react-apexcharts](https://apexcharts.com/docs/react-charts/)
 - [react-hook-form](https://react-hook-form.com)
 - [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate)
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge)
