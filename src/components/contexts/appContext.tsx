@@ -1,20 +1,17 @@
 "use client";
 
+import { ToggleState, useToggle } from "@/hooks/useToggle";
 import React, {
   createContext,
-  Dispatch,
   ReactNode,
-  SetStateAction,
   useContext,
-  useState,
 } from "react";
 
-type BoolDispatch = Dispatch<SetStateAction<boolean>>;
 
 // This type defines the shape for our Sidebar Context
 type TSidebarContext = {
   isSidebarOpen: boolean;
-  setSidebarOpen: BoolDispatch;
+  setSidebarOpen: ToggleState;
 };
 
 // This type combines all the shapes
@@ -45,7 +42,7 @@ export const useAppContext = (): TAppContext => {
  * @returns
  */
 export const AppContextProvider = ({ children }: { children: ReactNode }) => {
-  const [isSidebarOpen, setSidebarOpen] = useState<boolean>(false);
+  const [isSidebarOpen, setSidebarOpen] = useToggle();
 
   return (
     <AppContext.Provider
