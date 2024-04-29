@@ -11,6 +11,6 @@ export type ToggleState = Dispatch<SetStateAction<boolean>>;
  * @param state the iniital state, default 'false'
  * @returns
  */
-const useToggle = (state?: boolean): (boolean | ToggleState)[] => {
+export const useToggle = (state?: boolean): (boolean | ToggleState)[] => {
   return useState<boolean>(state || false);
 };
