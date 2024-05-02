@@ -6,8 +6,8 @@ This is a site template built using [Bun](https://bun.sh) to quickly create site
 bunx create-next-app@latest --use-bun -e https://github.com/dishmael/next-template
 ```
 
-### Authentication/Authorization
-I've added authorization/authentication via auth0 to the template, but the middleware file is named middleware.ts.disabled. You'll need to setup [auth0](https://github.com/auth0/nextjs-auth0) and then change the filename back to middleware.ts. Don't forget to update the variables in .env once you have auth0 configured.
+### Middleware
+I've added authorization/authentication via auth0 to the template using middleware.ts, but the middleware file is disabled as middleware.ts.auth. You'll need to setup [auth0](https://github.com/auth0/nextjs-auth0) and then change the filename to middleware.ts. Don't forget to update the variables in .env once you have auth0 configured. I have also added another middleware file to handle subdomains (middleware.ts.subdomains). These middleware files are provided to bootstrap future needs.
 
 ### Enhancement Packages
 - [@auth0/nextjs-auth0](https://github.com/auth0/nextjs-auth0)
@@ -44,6 +44,7 @@ src
 │   ├── layouts
 │   ├── nav
 │   └── ui
+├── hooks
 ├── lib
 ├── styles
 └── utils
