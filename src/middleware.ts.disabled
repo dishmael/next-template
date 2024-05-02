@@ -11,5 +11,16 @@ export default withMiddlewareAuthRequired();
 
 // https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+  matcher: [
+    /*
+     * Match all paths except for:
+     * 1. /api routes
+     * 2. /_next (Next.js internals)
+     * 3. /_static (inside /public)
+     * 4. /_next/image
+     * 5. /favicon.ico
+     * 6. all root files inside /public
+     */
+    "/((?!api/|_next/|_static/|_next/image|favicon.ico|[\\w-]+\\.\\w+).*)",
+  ],
 };
