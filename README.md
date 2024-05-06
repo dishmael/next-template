@@ -54,3 +54,12 @@ src
 I'm using this section of the README to capture changes in mindset on frameworks and packages.
 #### @Preact/Signals
 I tried implementing [@preact/signals](https://preactjs.com/guide/v10/signals) as a replacement for useState for managing application state; howeveer, I could not get the signal to work correctly when trying to apply the state at a global level with the materials-UI components. After many hours of trying to debug the issue, I gave up and went back to using useState.
+#### Git Hooks: pre-commit
+I added a pre-commit to .git/hooks to automatically increment the patch version in package.json. Since the .git directory is not synced to the repo, I'm including it here for future reference.
+```
+#!/bin/sh
+VERSION=$(jq -r '.version' package.json)
+NEW_VERSION=$(echo $VERSION | awk -F. '{$NF = $NF + 1;} 1' | sed 's/ /./g')
+jq ".version = \"$NEW_VERSION\"" package.json > temp.json && mv temp.json package.json
+git add package.json
+```
