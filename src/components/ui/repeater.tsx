@@ -7,10 +7,10 @@ type RepeaterProps = {
 
 export const Repeater: FC<RepeaterProps> = ({ count, children }) => {
   return (
-    <div>
+    <>
       {Array.from({ length: count }, (_, i) => {
-        return <div key={i}>{ children }</div>;
+        return <div key={i}>{children}</div>;
       })}
-    </div>
+    </>
   );
 };
