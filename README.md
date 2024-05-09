@@ -70,21 +70,8 @@ I had initially used Shadcn/UI but had issues with a few of the UI components. I
 I added a pre-commit to .git/hooks to automatically increment the patch version in package.json. Since the .git directory is not synced to the repo, I'm including it here for future reference.
 ```
 #!/bin/sh
-
-# Update the version number
 VERSION=$(jq -r '.version' package.json)
 NEW_VERSION=$(echo $VERSION | awk -F. '{$NF = $NF + 1;} 1' | sed 's/ /./g')
 jq ".version = \"$NEW_VERSION\"" package.json > temp.json && mv temp.json package.json
-
-# Add package.json
 git add package.json
-
-# Check if there are changes other than the version number
-CHANGES=$(git diff --cached package.json | grep '"version":' | grep -v '"version":')
-if [ -z "$CHANGES" ]; then
-  # If the only change is the version number, set the commit message to 'incremented version'
-  git commit --no-verify -m "incremented version"
-else
-  git commit --no-verify -m $1
-fi
 ```
