@@ -79,13 +79,10 @@ jq ".version = \"$NEW_VERSION\"" package.json > temp.json && mv temp.json packag
 # Add package.json
 git add package.json
 
-# Check if package.json is staged for commit
-if git diff --cached --name-only | grep -q '^package.json$'; then
-  # Check if there are changes other than the version number
-  CHANGES=$(git diff --cached package.json | grep -Ev '^\+  "version":' | grep -Ev '^-  "version":')
-  if [ -z "$CHANGES" ]; then
-    # If the only change is the version number, set the commit message to 'incremented version'
-    git commit -m "incremented version"
-  fi
+# Check if there are changes other than the version number
+CHANGES=$(git diff --cached package.json | grep -Ev '^\+  "version":' | grep -Ev '^-  "version":')
+if [ -z "$CHANGES" ]; then
+  # If the only change is the version number, set the commit message to 'incremented version'
+  git commit -m "incremented version"
 fi
 ```
