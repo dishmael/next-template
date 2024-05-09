@@ -1,16 +1,11 @@
 import React, { ReactNode } from "react";
 import { Header, Main, Sidebar } from "@/components/nav";
-import { ThemeProvider } from "@/components/contexts/themeProvider";
+import { Providers } from "@/components/contexts/providers";
 import { AppContextProvider } from "@/components/contexts/appContext";
 
 export const DefaultLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
+    <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
       <AppContextProvider>
         <div className="flex flex-col h-screen overflow-hidden">
           <Header />
@@ -20,6 +15,6 @@ export const DefaultLayout = ({ children }: { children: ReactNode }) => {
           </div>
         </div>
       </AppContextProvider>
-    </ThemeProvider>
+    </Providers>
   );
 };

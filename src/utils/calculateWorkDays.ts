@@ -13,7 +13,7 @@
  * @param holidays 
  * @returns number of work days
  */
-const calculateWorkDays = (
+const calculateWorkdays = (
   startDate: string,
   endDate: string,
   holidays: string[]
@@ -34,4 +34,4 @@ const calculateWorkDays = (
   return count;
 };
 
-export default calculateWorkDays;
+export default calculateWorkdays;

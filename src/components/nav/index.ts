@@ -1,5 +1,5 @@
-import Header from "./header";
-import Main from "./main";
-import Sidebar from "./sidebar";
+import Header from "@/components/nav/header"
+import Sidebar from "@/components/nav/sidebar"
+import Main from "@/components/nav/main"
 
-export { Header, Main, Sidebar };
+export { Header, Sidebar, Main }

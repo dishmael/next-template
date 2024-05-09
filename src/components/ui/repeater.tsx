@@ -1,8 +1,16 @@
+import { FC, ReactNode } from "react";
 
-export const Repeater = ({count}:{count: number}) => {
+type RepeaterProps = {
+  count: number;
+  children: ReactNode;
+};
+
+export const Repeater: FC<RepeaterProps> = ({ count, children }) => {
   return (
-    <div>{Array.from({length: count}, (_, i) => {
-      return <div key={i}>Test</div>
-    })}</div>
-  )
-}
+    <div>
+      {Array.from({ length: count }, (_, i) => {
+        return <div key={i}>{ children }</div>;
+      })}
+    </div>
+  );
+};
