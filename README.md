@@ -80,9 +80,11 @@ jq ".version = \"$NEW_VERSION\"" package.json > temp.json && mv temp.json packag
 git add package.json
 
 # Check if there are changes other than the version number
-CHANGES=$(git diff --cached package.json | grep -Ev '^\+  "version":' | grep -Ev '^-  "version":')
+CHANGES=$(git diff --cached package.json | grep '"version":' | grep -v '"version":')
 if [ -z "$CHANGES" ]; then
   # If the only change is the version number, set the commit message to 'incremented version'
-  git commit -m "incremented version"
+  git commit --no-verify -m "incremented version"
+else
+  git commit --no-verify -m $1
 fi
 ```
