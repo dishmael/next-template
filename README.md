@@ -71,23 +71,21 @@ I added a pre-commit to .git/hooks to automatically increment the patch version 
 ```
 #!/bin/sh
 
-# Store the current state of package.json
-OLD_CONTENT=$(cat package.json)
-
 # Update the version number
 VERSION=$(jq -r '.version' package.json)
 NEW_VERSION=$(echo $VERSION | awk -F. '{$NF = $NF + 1;} 1' | sed 's/ /./g')
 jq ".version = \"$NEW_VERSION\"" package.json > temp.json && mv temp.json package.json
 
-# Store the updated state of package.json
-NEW_CONTENT=$(cat package.json)
-
-# Add package.json to commit
+# Add package.json
 git add package.json
 
-# Check if there are any changes other than the version number change
-if [ "$OLD_CONTENT" = "$NEW_CONTENT" ]; then
-  # If there are changes other than the version number, commit with a regular message
-  git commit -m "Incremented version to $NEW_VERSION"
+# Check if package.json is staged for commit
+if git diff --cached --name-only | grep -q '^package.json$'; then
+  # Check if there are changes other than the version number
+  CHANGES=$(git diff --cached package.json | grep -Ev '^\+  "version":' | grep -Ev '^-  "version":')
+  if [ -z "$CHANGES" ]; then
+    # If the only change is the version number, set the commit message to 'incremented version'
+    git commit -m "incremented version"
+  fi
 fi
 ```
