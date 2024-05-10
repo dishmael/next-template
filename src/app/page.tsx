@@ -1,10 +1,13 @@
+import { BreadcrumbItem, Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Repeater } from "@/components/ui/repeater";
 
 const Home = () => {
   return (
     <div className="flex flex-col p-4 gap-6 h-full">
       {/* Row 1: Header */}
-      <Header text="Home" />
+      <Breadcrumbs>
+        <BreadcrumbItem>Home</BreadcrumbItem>
+      </Breadcrumbs>
 
       {/* Row 2: Metrics */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-6">
