@@ -61,9 +61,9 @@ I'm using this section of the README to capture changes in mindset on frameworks
 
 I tried implementing [@preact/signals](https://preactjs.com/guide/v10/signals) as a replacement for useState for managing application state; however, I could not get the signal to work correctly when trying to apply the state at a global level with the materials-UI components. After many hours of trying to debug the issue, I gave up and went back to using useState.
 
-### Shadcn/UI --> NextUI
+### Shadcn/UI and NextUI
 
-I had initially used Shadcn/UI but had issues with a few of the UI components. I ended up swapping Shadcn/UI out for NextUI, which seems to be working a little better for my needs.
+I had initially used Shadcn/UI solely for the components but had issues with a few of the UI components. I ended up moving to NextUI, which seems to be working a little better for my needs. However, I am still using Shadcn/UI for specific components that work better than NextUI.
 
 ### Git Hooks: pre-commit
 
