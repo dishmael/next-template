@@ -43,9 +43,14 @@ import {
 
 /** Types **/
 
+/**
+ * 
+ */
 type DataTableActions = {
-  view: string;
-  edit: string;
+  create: string;
+  read: string;
+  update: string;
+  delete: string;
 };
 
 /**
@@ -57,6 +62,13 @@ type DefaultSortState = {
   desc: boolean;
 };
 
+/**
+ * 
+ * @param columns
+ * @param data
+ * @param defaultSort
+ * @param addNew
+ */
 type DataTableProps<TData, TValue> = {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
@@ -64,12 +76,18 @@ type DataTableProps<TData, TValue> = {
   addNew?: ReactNode;
 };
 
+/**
+ * 
+ * @param title
+ * @param column
+ */
 type TSortingButton<T> = {
   title: string;
   column: Column<T>;
 };
 
 /** Components **/
+
 
 export const DataTable = <TData, TValue>({
   columns,
