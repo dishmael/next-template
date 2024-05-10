@@ -1,5 +1,4 @@
 import { Column, SortDirection } from "@tanstack/react-table";
-import { Button } from "@nextui-org/button";
 import { ArrowDownIcon, ArrowUpIcon, ChevronsUpDown } from "lucide-react";
 
 type TSortingButton<T> = {
