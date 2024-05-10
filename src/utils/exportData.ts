@@ -1,4 +1,4 @@
-import { getTimestamp } from ".";
+import { getTimestamp } from "./time-helpers";
 
 type FileType = "csv" | "json";
 type Exportable<T> = {
@@ -14,7 +14,7 @@ type Exportable<T> = {
  * @param fileType the mime-type; csv or json
  * @param fileName the prefix for the output file name
  */
-const exportData = <T>({
+export const exportData = <T>({
   data,
   fileType,
   fileName = "data",
@@ -83,5 +83,3 @@ const download = (data: string, type: string, fileName: string) => {
   // Remove the anchor from the body
   document.body.removeChild(a);
 };
-
-export default exportData;
