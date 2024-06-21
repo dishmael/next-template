@@ -1,4 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
+// middleware.js
+import { NextResponse, NextRequest } from "next/server";
+import subdomains from "./subdomains.json";
 
 export const config = {
   matcher: [
@@ -15,24 +17,28 @@ export const config = {
 
 export default async function middleware(req: NextRequest) {
   const url = req.nextUrl;
-
   const hostname = req.headers.get("host")!;
-
   const path = url.pathname;
 
-  let subdomain = hostname.split(".")[0];
+  console.log(url, hostname, path)
 
+  let subdomain = hostname.split(".")[0];
   subdomain = subdomain.replace("localhost:3000", "");
 
   // handle no subdomain or www with base path
   if (subdomain === "www" || subdomain === "") {
+    if (path !== "/") {
+      return NextResponse.error();
+    }
+
     return NextResponse.next();
   }
 
-  // handle subdomains by routing to /users/<domain> (change this to whatever you want)
-  if (subdomain !== "app") {
+  // handle subdomains by routing to <domain> (change this to whatever you want)
+  if (subdomain !== "app" ) {
+    console.log('performing rewrite')
     return NextResponse.rewrite(
-      new URL(`/users/${subdomain}${path === "/" ? "" : path}`, req.url)
+      new URL(`${subdomain}${path === "/" ? "" : path}`, req.url)
     );
   }
 
