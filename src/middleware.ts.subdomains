@@ -20,7 +20,7 @@ export default async function middleware(req: NextRequest) {
   const hostname = req.headers.get("host")!;
   const path = url.pathname;
 
-  console.log(url, hostname, path)
+  //console.log(url, hostname, path)
 
   let subdomain = hostname.split(".")[0];
   subdomain = subdomain.replace("localhost:3000", "");
@@ -28,7 +28,7 @@ export default async function middleware(req: NextRequest) {
   // handle no subdomain or www with base path
   if (subdomain === "www" || subdomain === "") {
     if (path !== "/") {
-      return NextResponse.error();
+      return NextResponse.error(); // 404
     }
 
     return NextResponse.next();
@@ -36,7 +36,7 @@ export default async function middleware(req: NextRequest) {
 
   // handle subdomains by routing to <domain> (change this to whatever you want)
   if (subdomain !== "app" ) {
-    console.log('performing rewrite')
+    //console.log('performing rewrite')
     return NextResponse.rewrite(
       new URL(`${subdomain}${path === "/" ? "" : path}`, req.url)
     );
